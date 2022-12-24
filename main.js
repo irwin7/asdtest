@@ -9,9 +9,7 @@ const {
 
 let mainWindow;
 
-mainWindow.once('ready-to-show', () => {
-    autoUpdater.checkForUpdatesAndNotify();
-});
+
 
 function createWindow() {
     mainWindow = new BrowserWindow({
@@ -24,6 +22,9 @@ function createWindow() {
     mainWindow.loadFile('index.html');
     mainWindow.on('closed', function () {
         mainWindow = null;
+    });
+    mainWindow.once('ready-to-show', () => {
+        autoUpdater.checkForUpdatesAndNotify();
     });
 }
 
