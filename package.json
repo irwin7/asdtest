@@ -1,6 +1,6 @@
 {
   "name": "test",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "asd",
   "main": "main.js",
   "scripts": {
@@ -8,6 +8,11 @@
     "start": "electron .",
     "build": "electron-builder build --win --publish never",
     "deploy": "electron-builder build --win --publish always"
+  },
+  "webPreferences": {
+    "nodeIntegration": true,
+    "enableRemoteModule": true,
+    "contextIsolation": false
   },
   "repository": {
     "type": "git",
@@ -21,6 +26,7 @@
   "dependencies": {
     "electron-updater": "^5.3.0"
   },
+  "type": "module",
   "devDependencies": {
     "electron": "^22.0.0",
     "electron-builder": "^23.6.0"
